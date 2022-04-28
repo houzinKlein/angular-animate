@@ -1,0 +1,12 @@
+<div class="container">
+  <p class="animated bounce" [style.display]="display">Bounce</p>
+  <p class="animated flash" [style.display]="display">Flash</p>
+
+  <div class="w3-content w3-section" style="max-width:500px">
+    <ng-container *ngFor="let image of images; let i = index;">
+    <img class="animated" [ngClass]="image.anim" [src]="image.src" style="width:100%" [style.display]="i === index ? 'block' : 'none'">
+    </ng-container>
+  </div>
+
+  <button (click)="toggleDisplay()">Toggle</button>
+</div>
